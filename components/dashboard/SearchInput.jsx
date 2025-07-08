@@ -1,0 +1,17 @@
+
+'use client'
+import React from "react";
+import { Search } from "lucide-react";
+export default function SearchInput() {
+    return (
+        <form>
+            <label htmlFor="simple-search" className="sr-only">Search</label>
+            <div className="relative w-full">
+                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                   <Search className="w-4 h-4 text-gray-500 "/>
+                </div>
+                <input type="text" id="simple-search" className=" border border-rounded ext-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 px-2 py-1.5  " placeholder="Search Customer(/)" required />
+            </div>
+        </form>
+    )
+}
