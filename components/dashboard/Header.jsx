@@ -5,7 +5,7 @@ import SearchInput from "./SearchInput";
 export default function Header() {
     return (
         <header className="bg-gray-100  h-12 border-b border-slate-300 shadow-md flex items-center justify-between  px-8  ">
-            <div className="flex gap-3">
+              <div className="flex gap-3">
                 {/* Recent activitites */}
 
                 <button>
