@@ -2,6 +2,8 @@
 import { Check, CheckCircle2 } from "lucide-react";
 import React from "react";
 import Link from "next/link";
+import SalesActivityCard from "./SalesActivityCard";
+import InventorySummaryCard from "./inventorySummaryCard";
 
 export default function SalesOverview(){
     const salesActivity= [
@@ -39,6 +41,20 @@ export default function SalesOverview(){
         },
 
     ]
+
+    const inventorySummary=[
+        {
+            title:"Quantity in Hand",
+         number:10,
+         href:"#",
+        },
+        {
+            title:"Quantity to be recieved",
+            number:0,
+            href:"#",
+           }
+
+    ]
     return(
         <div className="bg-blue-50 border-b  border-slate-300 px-3 py-4 grid grid-cols-12 gap-4">
           <div className="col-span-8 border-r border-slate-300  p-8">
@@ -47,16 +63,7 @@ export default function SalesOverview(){
                 {
                     salesActivity.map((item, i)=>{
                         return(
-                            <Link href={item.href} key={i} className="rounded-lg cursor-pointer flex items-center justify-center flex-col gap-3 transition-all duration-300 border border-slate-400 hover:border-blue-400 bg-white p-8"> 
-                            <h4 className={`font-semibold text-3xl ${item.color}`}>{item.number}</h4>
-                            <small className={`text-slate-500 `}>{item.unit}</small>
-                             <div className="flex items-center space-x-2 text-slate-500 ">
-                        <CheckCircle2 className="w-4 h-4"/>
-                        <span className="uppercase text-xs">{item.title}</span>
-
-
-                     </div>
-                </Link>
+                           <InventorySummaryCard item={item} key={i}/>
                         )
                     })
                 }
@@ -66,10 +73,13 @@ export default function SalesOverview(){
           <h2 className="mb-6 text-xl">Inventory Summary</h2>
 
           <div>
-            <div className="shadow rounded-lg border border-slate-200 hover:border-blue-400 bg-white px-4 py-2 cursor-pointer flex items-center  gap-3 transition-all duration-300">
-                <h2 className="text-slate-500 uppercase text-sm">Quantity in Hand</h2>
-                <span className="text-2xl">10</span>              
-            </div>
+            {
+                inventorySummary?.map((item, i)=>{
+                    return(
+                      <SalesActivityCard item={item} key={i}/>
+                    )
+                })
+            }
           </div>
 
           </div>

@@ -1,7 +1,7 @@
 
 'use client'
 import React from "react";
-import {HomeNavbar} from "../../../../components/dashboard"
+import {HomeNavbar} from "../../../../src/components/dashboard"
 export default function Layout({ children }) {
     return (
         <div className="flex w-full">

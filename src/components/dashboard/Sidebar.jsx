@@ -1,11 +1,66 @@
 'use client'
-import { BaggageClaim, ChevronLeft, Home, ShoppingCart, ShoppingBasket, ShoppingBag, Cable, BarChart, Files } from "lucide-react";
+import { BaggageClaim, ChevronLeft, Home, ShoppingCart, ShoppingBasket, ShoppingBag, Cable, BarChart, Files, PlusCircle } from "lucide-react";
 import React from "react";
 import Link from "next/link";
 import SubscriptionCard from "./SubscriptionCard";
+import SideBarDropdownLink from "./SideBarDropdownLink";
+
 
 
 export default function Sidebar() {
+    const inventoryLinks=[
+        {
+            title:"Item",
+            href:"/dashboard/inventory/items"
+        },
+        {
+            title:"Item Groups",
+            href:"/dashboard/inventory/itemgroups"
+        },
+        {
+            title:"Inventory Adjustments",
+            href:"/dashboard/inventory/adjustments"
+        },
+    ]
+
+    const salesLinks=[
+        {
+            title:"Customers",
+            href:"/dashboard/sales/customers"
+        },
+        {
+            title:"Orders",
+            href:"/dashboard/sales/orders"
+        },
+        {
+            title:"Packages",
+            href:"/dashboard/sales/packages"
+        },
+        {
+            title:"Shipments",
+            href:"/dashboard/sales/shipments"
+        },
+        {
+            title:"Invoices",
+            href:"/dashboard/sales/invoices"
+        },
+        {
+            title:"Sales Receipts",
+            href:"/dashboard/sales/sales-receipts"
+        },
+        {
+            title:"Payment Received",
+            href:"/dashboard/sales/payment-received"
+        },
+        {
+            title:"Sales Returns",
+            href:"/dashboard/sales/sales-returns"
+        },
+        {
+            title:"Credit Notes",
+            href:"/dashboard/sales/credit-notes"
+        },
+    ]
     return (
         <div className="w-60 min-h-screen  text-slate-50 bg-slate-800 flex flex-col justify-between fixed">
             {/* Top Part */}
@@ -16,12 +71,11 @@ export default function Sidebar() {
                     <span className="font-semibold text-xl">Inventory</span>
                 </Link>
 
-                {/* Links */}
 
                 <nav className="flex flex-col  gap-3 px-3 py-6">
                     <Link className="flex items-center  bg-blue-600 text-slate-50  p-2 rounded-md space-x-2" href="#"><Home className="w-4 h-4" /> <span>Home</span></Link>
-                    <button className="p-2 flex items-center space-x-2" ><BaggageClaim className="w-4 h-4" /> <span>Inventory</span></button>
-                    <button className="p-2 flex items-center space-x-2" ><ShoppingBasket className="w-4 h-4" /> <span>Sales</span></button>
+                     <SideBarDropdownLink title="Inventory" items={inventoryLinks} icon={BaggageClaim}/>
+                     <SideBarDropdownLink title="Sales" items={salesLinks} icon={ShoppingBasket}/>
 
                     <button className="p-2 flex items-center space-x-2" ><ShoppingBag className="w-4 h-4" /> <span>Purchases</span></button>
                     <Link className="p-2 flex items-center space-x-2" href=""><Cable className="w-4 h-4" /> <span>Integration</span></Link>

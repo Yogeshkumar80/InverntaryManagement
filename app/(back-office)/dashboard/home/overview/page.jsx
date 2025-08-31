@@ -1,6 +1,6 @@
 import React from "react";
-import DashboardBanner from "../../../../../components/dashboard/DashboardBanner"
-import SalesOverview from "../../../../../components/dashboard/SalesOverview"
+import DashboardBanner from "../../../../../src/components/dashboard/DashboardBanner"
+import SalesOverview from "../../../../../src/components/dashboard/SalesOverview"
 export default function Dashboard(){
     return(
         <div className="">

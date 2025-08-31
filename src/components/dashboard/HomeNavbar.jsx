@@ -10,19 +10,19 @@ export default function HomeNavbar() {
     const navLinks= [
         {
             title:"Dashboard",
-            href:"/inventory/home/overview"
+            href:"/dashboard/home/overview"
         },
         {
             title:"Getting Started",
-            href:"/inventory/home/getting-started"
+            href:"/dashboard/home/getting-started"
         },
         {
             title:"Recent Updates",
-            href:"/inventory/home/updates"
+            href:"/dashboard/home/updates"
         },
         {
             title:"Announcements",
-            href:"/inventory/home/anouncement"
+            href:"/dashboard/home/anouncement"
         },
     ]
     return (
