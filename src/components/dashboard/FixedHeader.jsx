@@ -1,14 +1,14 @@
 'use client'
 import { LayoutGrid, List, Plus,MoreHorizontal, HelpCircle } from "lucide-react";
 import Link from "next/link";
-export default function FixedHeader(){
+export default function FixedHeader({newLink}){
     return(
         <div className="flex justify-between items-center bg-white py-6 px-4">
            <button className="text-2xl">All Items</button>
            <div className="flex gap-4 ">
              {/* New */}
              <div className="pr-2">
-                    <Link href="#" className="p-1 px-6  text-white bg-blue-600 hover:bg-blue-700 rounded-sm flex items-center space-x-2">
+                    <Link href={newLink} className="p-1 px-6  text-white bg-blue-600 hover:bg-blue-700 rounded-sm flex items-center space-x-2">
                         <Plus className="text-slate-50 w-4 h-4" />
                         <span>New</span>
                     </Link>

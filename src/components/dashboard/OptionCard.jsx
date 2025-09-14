@@ -2,13 +2,14 @@
 import Link from "next/link";
 
 
-export default function OptionCard(optionData){
-    console.log(optionData)
+export default function OptionCard({optionData}){
+    let Icon;
     const {title,icon,description, link, linkTitle,enable}=optionData;
+    Icon=icon;
     return(
         <div className="shadow-md rounded p-6 bg-white flex flex-col items-center justify-center gap-4">
                     <h2 className="font-semibold text-xl">{title} </h2>
-                    <div className=""> <icon strokeWidth=".5px" className="w-36 h-36" /> </div>
+                    <div className=""> <Icon strokeWidth=".5px" className="w-36 h-36" /> </div>
                     <p className="line-clamp-1">
                         {description}
                     </p>

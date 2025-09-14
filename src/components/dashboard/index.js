@@ -7,5 +7,6 @@ import SalesOverview from "./SalesOverview";
 import SalesActivityCard from "./SalesActivityCard";
 import InventorySummaryCard from "./inventorySummaryCard";
 import FixedHeader from "./FixedHeader";
+import FormHeader from "./FormHeader";
 
-export {HomeNavbar,Header,Sidebar,SubscriptionCard,SearchInput,SalesOverview,SalesActivityCard,InventorySummaryCard,FixedHeader}
+export {HomeNavbar,Header,Sidebar,SubscriptionCard,SearchInput,SalesOverview,SalesActivityCard,InventorySummaryCard,FixedHeader,FormHeader}

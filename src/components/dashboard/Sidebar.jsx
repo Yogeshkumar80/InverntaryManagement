@@ -11,15 +11,27 @@ export default function Sidebar() {
     const inventoryLinks=[
         {
             title:"Item",
-            href:"/dashboard/inventory/items"
+            href:"/dashboard/inventory"
         },
         {
-            title:"Item Groups",
-            href:"/dashboard/inventory/itemgroups"
+            title:"Categories",
+            href:"/dashboard/inventory"
+        },
+        {
+            title:"Units",
+            href:"/dashboard/inventory"
+        },
+        {
+            title:"Brands",
+            href:"/dashboard/inventory"
+        },
+        {
+            title:"Warehouse",
+            href:"/dashboard/inventory"
         },
         {
             title:"Inventory Adjustments",
-            href:"/dashboard/inventory/adjustments"
+            href:"/dashboard/inventory"
         },
     ]
 
@@ -73,12 +85,12 @@ export default function Sidebar() {
 
 
                 <nav className="flex flex-col  gap-3 px-3 py-6">
-                    <Link className="flex items-center  bg-blue-600 text-slate-50  p-2 rounded-md space-x-2" href="#"><Home className="w-4 h-4" /> <span>Home</span></Link>
+                    <Link className="flex items-center  bg-blue-600 text-slate-50  p-2 rounded-md space-x-2" href="/dashboard/home/overview"><Home className="w-4 h-4" /> <span>Home</span></Link>
                      <SideBarDropdownLink title="Inventory" items={inventoryLinks} icon={BaggageClaim}/>
                      <SideBarDropdownLink title="Sales" items={salesLinks} icon={ShoppingBasket}/>
 
                     <button className="p-2 flex items-center space-x-2" ><ShoppingBag className="w-4 h-4" /> <span>Purchases</span></button>
-                    <Link className="p-2 flex items-center space-x-2" href=""><Cable className="w-4 h-4" /> <span>Integration</span></Link>
+                    <Link className="p-2 flex items-center space-x-2" href="/dashboard/integration"><Cable className="w-4 h-4" /> <span>Integration</span></Link>
 
 
                     <Link className="p-2 flex items-center space-x-2" href=""><BarChart className="w-4 h-4" /> <span>Reports</span></Link>
