@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import {FixedHeader} from "@/components/dashboard";
-import { Award, Boxes, Component, ScrollText, Shirt } from "lucide-react";
+import { Award, Boxes, Component, ScrollText, Shirt, LayoutGrid, LayoutPanelTop, Slack, Warehouse, Scale, Diff} from "lucide-react";
 import Link from "next/link";
 import OptionCard from "@/components/dashboard/OptionCard";
 
@@ -18,7 +18,7 @@ export default function Inventory(){
         // },
         {
             title:"Item",
-            icon:Shirt,
+            icon:LayoutGrid,
             description:"Create standalone items and services that you buy and sell",
             link:"/dashboard/inventory/items/new",
             linkTitle:"New Item",
@@ -26,8 +26,7 @@ export default function Inventory(){
         },
         {
             title:"Categories",
-            icon:Boxes,
-
+            icon:LayoutPanelTop,
             description:"Bundle different items together and sell them as kits",
             link:"/dashboard/inventory/categories/new",
             linkTitle:"New Category",
@@ -35,7 +34,7 @@ export default function Inventory(){
         },
         {
             title:"Brands",
-            icon:ScrollText,
+            icon:Slack,
             description:"Tweak your item prices for specific contacts or transactions",
             link:"/dashboard/inventory/brands/new",
             linkTitle:"New Brand",
@@ -43,7 +42,7 @@ export default function Inventory(){
         },
         {
             title:"Warehouse",
-            icon:ScrollText,
+            icon:Warehouse,
             description:"Tweak your item prices for specific contacts or transactions",
             link:"/dashboard/inventory/warehouse/new",
             linkTitle:"New Warehouse",
@@ -51,17 +50,25 @@ export default function Inventory(){
         }
         ,     {
             title:"Units",
-            icon:Component,
+            icon:Scale,
             description:"Tweak your item prices for specific contacts or transactions",
             link:"/dashboard/inventory/units/new",
             linkTitle:"New Unit",
+            enable:true
+        },
+        {
+            title:"Inventory Adjustments",
+            icon:Diff,
+            description:"Transfer stock from the main Warehouse to Branches",
+            link:"/dashboard/inventory/adjustments/new",
+            linkTitle:"New Adjustment",
             enable:true
         }
     ]
     return(
         <div>
             <FixedHeader newLink="inventory/items/new"/>
-            <div className="grid grid-cols-1 lg:grid-cols-2 m-4 py-8 px-16 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  m-4 py-8 px-16 gap-6">
 
                 {optionCards?.map((optionCard,index)=>{
                     return(

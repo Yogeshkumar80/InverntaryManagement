@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form"
 import { TextInput, SubmitButton, TextareaInput, SelectInput } from "@/components/Forminputs"
 import { useState } from "react"
 
-export default function NewWarehouse() {
+export default function AddInventoryForm() {
     const [loading, setLoading] = useState(false);
     const {
         register,
@@ -14,14 +14,22 @@ export default function NewWarehouse() {
         formState: { errors },
     } = useForm();
 
-    const selectOptions=[
+    const branches=[
         {
-            label:"Main",
-            value:"main"
+            label:"Branch A",
+            value:"branchA"
         },
         {
-            label:"Branch",
-            value:"branch"
+            label:"Branch B",
+            value:"branchB"
+        },
+        {
+            label:"Main A",
+            value:"mainA"
+        },
+        {
+            label:"Main B",
+            value:"mainB"
         }
     ]
 
@@ -29,7 +37,7 @@ export default function NewWarehouse() {
         setLoading(true)
         const baseUrl = "http://localhost:3000";
         try {
-            const response = await fetch(`${baseUrl}/api/warehouse`, {
+            const response = await fetch(`${baseUrl}/api/adjustments/add`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -49,23 +57,22 @@ export default function NewWarehouse() {
     }
     return (
         <div>
-            {/* Header */}
-            <FormHeader title="New Warehouse" href="/dashboard/inventory" />
+
             {/* Form */}
             <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-4xl p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto my-3">
                 <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
-                    <SelectInput options={selectOptions} label="Warehouse Type" className="w-full" name="type" register={register} errors={errors} />
-                    <TextInput label="Warehouse Title" className="w-full" name="title" register={register} errors={errors} />
-                    <TextInput label="Warehouse Location"  name="location" register={register} errors={errors} />
+                    <TextInput label="Enter Quantity of Stock to Add" type="number" className="w-full" name="addStockQty" register={register} errors={errors} />
+                    <SelectInput options={branches} name="receivingWarehouseId" label="Select the warehouse that will receive the Stock" className="w-full" register={register} errors={errors} />
+                    {/* <TextInput label="Adjustment Location"  name="location" register={register} errors={errors} /> */}
 
                     <div className="sm:col-span-2">
 
-                        <TextareaInput label="Warehouse Description" className="w-full" name="description" register={register} errors={errors} />
+                        <TextareaInput label="Add Stock Notes" className="w-full" name="notes" register={register} errors={errors} />
                     </div>
 
 
                 </div>
-                <SubmitButton isLoading={loading} title="Warehouse" />
+                <SubmitButton isLoading={loading} title="Add Stock" />
 
             </form>
             {/* Footer */}
