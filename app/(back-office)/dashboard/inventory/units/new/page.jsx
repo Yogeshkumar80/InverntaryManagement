@@ -4,6 +4,7 @@ import { FormHeader } from "@/components/dashboard"
 import { useForm } from "react-hook-form"
 import { TextInput, SubmitButton, TextareaInput } from "@/components/Forminputs"
 import { useState } from "react"
+import { toast } from "react-hot-toast"
 
 export default function NewUnit() {
     const [loading, setLoading] = useState(false);
@@ -29,6 +30,7 @@ export default function NewUnit() {
             console.log(response)
             reset()
             setLoading(false)
+            toast.success("Unit created successfully")
         }
        }
        catch(error){

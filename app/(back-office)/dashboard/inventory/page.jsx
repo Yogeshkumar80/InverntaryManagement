@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import {FixedHeader} from "@/components/dashboard";
-import { Award, Boxes, Component, ScrollText, Shirt, LayoutGrid, LayoutPanelTop, Slack, Warehouse, Scale, Diff} from "lucide-react";
+import { Award, Boxes, Component, ScrollText, Shirt, LayoutGrid, LayoutPanelTop, Slack, Warehouse, Scale, Diff, Factory} from "lucide-react";
 import Link from "next/link";
 import OptionCard from "@/components/dashboard/OptionCard";
 
@@ -62,6 +62,14 @@ export default function Inventory(){
             description:"Transfer stock from the main Warehouse to Branches",
             link:"/dashboard/inventory/adjustments/new",
             linkTitle:"New Adjustment",
+            enable:true
+        }
+        ,{
+            title:"Suppliers",
+            icon:Factory,
+            description:"Transfer stock from the main Warehouse to Branches",
+            link:"/dashboard/inventory/suppliers/new",
+            linkTitle:"New Supplier",
             enable:true
         }
     ]

@@ -1,5 +1,5 @@
 'use client'
-export default function TextInput({label,name, isRequired=true,type="text", className="sm:col-span-2", register, errors }){
+export default function TextInput({label,name,defaultValue="", isRequired=true,type="text", className="sm:col-span-2", register, errors }){
   return(
         <div className={className}>
         <label
@@ -15,6 +15,7 @@ export default function TextInput({label,name, isRequired=true,type="text", clas
             name={name}
             id={name}
             autoComplete={name}
+            defaultValue={defaultValue}
             className="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
             placeholder="Type the Category title"
           /> 

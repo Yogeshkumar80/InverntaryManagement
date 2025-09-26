@@ -61,13 +61,15 @@ export default function AddInventoryForm() {
             {/* Form */}
             <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-4xl p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto my-3">
                 <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                    <TextInput label="Reference Number" type="referenceNumber" name="referenceNumber" register={register} errors={errors} />
                     <TextInput label="Enter Quantity of Stock to Add" type="number" className="w-full" name="addStockQty" register={register} errors={errors} />
-                    <SelectInput options={branches} name="receivingWarehouseId" label="Select the warehouse that will receive the Stock" className="w-full" register={register} errors={errors} />
+
+                    <SelectInput options={branches} name="warehouseId" label="Select the warehouse that will receive the Stock" className="w-full" register={register} errors={errors} />
                     {/* <TextInput label="Adjustment Location"  name="location" register={register} errors={errors} /> */}
 
                     <div className="sm:col-span-2">
 
-                        <TextareaInput label="Add Stock Notes" className="w-full" name="notes" register={register} errors={errors} />
+                        <TextareaInput label="Adjustment Note" className="w-full" name="notes" register={register} errors={errors} />
                     </div>
 
 

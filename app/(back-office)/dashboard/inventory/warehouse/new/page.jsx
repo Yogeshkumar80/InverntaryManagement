@@ -4,6 +4,7 @@ import { FormHeader } from "@/components/dashboard"
 import { useForm } from "react-hook-form"
 import { TextInput, SubmitButton, TextareaInput, SelectInput } from "@/components/Forminputs"
 import { useState } from "react"
+import { toast } from "react-hot-toast"
 
 export default function NewWarehouse() {
     const [loading, setLoading] = useState(false);
@@ -40,6 +41,7 @@ export default function NewWarehouse() {
                 console.log(response)
                 reset()
                 setLoading(false)
+                toast.success("Warehouse created successfully")
             }
         }
         catch (error) {
